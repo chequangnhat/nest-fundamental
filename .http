@@ -1,1 +1,18 @@
-http://localhost:3000
+@baseUrl = http://localhost:3000
+@contentType = application/json
+###
+{{baseUrl}}/
+###
+GET {{baseUrl}}/tasks
+###
+GET {{baseUrl}}/tasks/1
+
+### Create new task
+POST {{baseUrl}}/tasks 
+Content-Type: {{contentType}}
+
+{
+  "title": "Learn Nest js",
+  "description": "Description 1",
+  "status": "OPEN"
+}
