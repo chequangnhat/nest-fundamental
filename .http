@@ -1,1 +1,5 @@
+@baseURL = 'http://localhost:3000'
+@contenType = 'application/json'
+
 http://localhost:3000
+

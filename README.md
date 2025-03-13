@@ -70,6 +70,70 @@ $ mau deploy
 
 With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
 
+## Project Structure
+
+```
+nest-fundamental/
+├── src/                    # Source code directory
+│   ├── main.ts            # Application entry point
+│   ├── app.module.ts      # Root application module
+│   ├── app.controller.ts  # Root application controller
+│   ├── app.service.ts     # Root application service
+│   └── cats/             # Cats feature module
+│       ├── dto/          # Data Transfer Objects
+│       │   ├── create-cat.dto.ts   # DTO for creating cats
+│       │   └── update-cat.dto.ts   # DTO for updating cats
+│       ├── entities/     # Database entities
+│       │   └── cat.entity.ts       # Cat entity definition
+│       ├── cats.module.ts          # Cats module definition
+│       ├── cats.controller.ts      # Cats HTTP request handlers
+│       ├── cats.service.ts         # Cats business logic
+│       └── cats.controller.spec.ts # Cats controller tests
+├── test/                  # End-to-end tests
+│   ├── jest-e2e.json     # Jest e2e test configuration
+│   └── app.e2e-spec.ts   # Application e2e tests
+├── node_modules/         # Project dependencies
+├── dist/                 # Compiled JavaScript output
+├── nest-cli.json        # NestJS CLI configuration
+├── package.json         # Project metadata and dependencies
+├── tsconfig.json        # TypeScript configuration
+├── tsconfig.build.json  # TypeScript build configuration
+├── .eslintrc.js        # ESLint configuration
+├── .prettierrc         # Prettier configuration
+└── .gitignore         # Git ignore rules
+```
+
+### Key Components Explanation:
+
+1. **Entry Files**
+   - `main.ts`: Bootstrap file that creates the NestJS application
+   - `app.module.ts`: Root module that imports all other modules
+   - `app.controller.ts`: Basic controller for root-level routes
+   - `app.service.ts`: Basic service with business logic
+
+2. **Cats Feature Module**
+   - `cats.module.ts`: Encapsulates the cats feature
+   - `cats.controller.ts`: Handles HTTP requests for /cats endpoints
+   - `cats.service.ts`: Contains business logic for cat operations
+   - `dto/`: Data Transfer Objects for input validation
+   - `entities/`: Database models and schemas
+
+3. **Configuration Files**
+   - `nest-cli.json`: NestJS CLI configuration
+   - `tsconfig.json`: TypeScript compiler options
+   - `package.json`: Project dependencies and scripts
+   - `.eslintrc.js`: Code linting rules
+   - `.prettierrc`: Code formatting rules
+
+4. **Test Files**
+   - `*.spec.ts`: Unit tests alongside source files
+   - `test/`: End-to-end test directory
+
+5. **Build Output**
+   - `dist/`: Contains compiled JavaScript code
+
+This structure follows NestJS best practices for organizing a scalable application with clear separation of concerns.
+
 ## Resources
 
 Check out a few resources that may come in handy when working with NestJS:
