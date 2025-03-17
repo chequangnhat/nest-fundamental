@@ -16,3 +16,13 @@ Content-Type: {{contentType}}
   "description": "Description 1",
   "status": "OPEN"
 }
+
+### Validation error
+POST {{baseUrl}}/tasks 
+Content-Type: {{contentType}}
+
+{
+  "title": null,
+  "description": "Description 1",
+  "status": "XXX"
+}
