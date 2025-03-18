@@ -7,14 +7,17 @@ GET {{baseUrl}}/tasks
 ###
 GET {{baseUrl}}/tasks/1
 
+### get task with uuid
+GET {{baseUrl}}/tasks/edf6909f-cc58-4a89-a879-b4e4a94663b8
+
 ### Create new task
 POST {{baseUrl}}/tasks 
 Content-Type: {{contentType}}
 
 {
-  "title": "Learn Nest js",
-  "description": "Description 1",
-  "status": "OPEN"
+  "title": "Do Something",
+  "description": "With heart",
+  "status": "DONE"
 }
 
 ### Validation error
@@ -26,3 +29,16 @@ Content-Type: {{contentType}}
   "description": "Description 1",
   "status": "XXX"
 }
+
+
+### Update status of task
+PATCH {{baseUrl}}/tasks/edf6909f-cc58-4a89-a879-b4e4a94663b8/status
+Content-Type: {{contentType}}
+
+{
+  "status": "IN_PROGRESS"
+}
+
+
+### Delete a task
+DELETE {{baseUrl}}/tasks/db530ced-8c29-463f-838a-19f9d69a9b6f
